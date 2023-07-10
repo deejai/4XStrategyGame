@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://d86s5ea7oqc8"]
+
+[ext_resource type="Material" uid="uid://w37wmnv7bllj" path="res://worldmap_material.tres" id="1_8duxa"]
+[ext_resource type="Script" path="res://GameView.gd" id="1_gqwyp"]
+[ext_resource type="Texture2D" uid="uid://nvk3jmi0cqqh" path="res://Assets/worldmap_diffuse.png" id="2_b5ekf"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_xy4xl"]
+material = ExtResource("1_8duxa")
+size = Vector2(20, 12)
+subdivide_width = 128
+subdivide_depth = 128
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_gqwyp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0207174, 0.0779845, -0.0172612)
+mesh = SubResource("QuadMesh_xy4xl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer"]
+polygon = PackedVector2Array(-317, -49, -339, 21, -310, 68, -291, 80, -314, 205, -313, 249, -286, 263, -266, 255, -281, 244, -286, 226, -274, 214, -284, 205, -263, 188, -256, 171, -238, 164, -233, 152, -200, 112, -170, 91, -161, 56, -142, 30, -163, 10, -184, 8, -200, -3, -217, -25, -240, -30, -257, -45, -280, -49)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+texture = ExtResource("2_b5ekf")
+metadata/_edit_lock_ = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.273036, 0.962004, 0, -0.962004, 0.273036, 0, 1.80758, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.740614, -0.203029, -0.640523, 0.198184, -0.844847, 0.496947, -0.642039, -0.494987, -0.585469, -12.1265, 4.68179, -6.40054)

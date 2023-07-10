@@ -1,0 +1,44 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://w37wmnv7bllj"]
+
+[ext_resource type="Shader" path="res://worldmap_shader.gdshader" id="1_4jhna"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_smbnx"]
+load_path = "res://.godot/imported/worldmap_diffuse.png-3d3aba2fab5247f22f2f3f089505c81b.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kmoec"]
+load_path = "res://.godot/imported/worldmap_ao.png-57f5399223500ec6b1863801a54dab44.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c8v6n"]
+load_path = "res://.godot/imported/worldmap_height.png-6d1b210cbdfc8377fb0645b4392da5e8.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rqbty"]
+load_path = "res://.godot/imported/worldmap_normal.png-49c2dec09996b4872726c6cd2023f9cc.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ibjcc"]
+load_path = "res://.godot/imported/worldmap_smoothness.png-affac92a493bfb1c295217dd1aa239b3.s3tc.ctex"
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_4jhna")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = -1.0
+shader_parameter/ao_texture_channel = null
+shader_parameter/ao_light_affect = 0.0
+shader_parameter/heightmap_scale = 1.0
+shader_parameter/heightmap_min_layers = 8
+shader_parameter/heightmap_max_layers = 32
+shader_parameter/heightmap_flip = Vector2(1, 1)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/texture_albedo = SubResource("CompressedTexture2D_smbnx")
+shader_parameter/texture_roughness = SubResource("CompressedTexture2D_ibjcc")
+shader_parameter/texture_normal = SubResource("CompressedTexture2D_rqbty")
+shader_parameter/texture_ambient_occlusion = SubResource("CompressedTexture2D_kmoec")
+shader_parameter/texture_heightmap = SubResource("CompressedTexture2D_c8v6n")
